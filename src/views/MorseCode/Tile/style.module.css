@@ -1,0 +1,15 @@
+.border {
+  box-shadow: -2px -2px 50px -3px rgb(0 0 0 / 73%);
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+.padding {
+  padding: 1.25rem;
+}
+
+.box {
+  background-color: #3298dc;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
