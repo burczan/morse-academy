@@ -1,0 +1,9 @@
+.image {
+  display: block;
+  margin: 1em auto;
+  box-shadow: 0 0 0 0.125em rgb(134 148 164 / 25%);
+}
+
+.cursor {
+  cursor: pointer;
+}
