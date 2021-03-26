@@ -1,7 +1,7 @@
 import React from 'react';
 import { Column, Columns } from '../../common/components/Layout';
 import { Tile } from './Tile';
-import { chunkArray } from '../../common/utils/helpers';
+import { chunkArray } from '../../common/helpers/utils/chunkArray';
 import { FROM_MORSE } from '../../utils/morseCode';
 
 export const MorseCode = () => {

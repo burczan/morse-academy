@@ -40,7 +40,7 @@ export const FROM_MORSE: CodeMap = {
   '...---...': 'SOS',
 };
 
-const reverseMapping = <T>(obj: T): T => {
+const reverseMapping = <Obj extends Record<string, unknown>>(obj: Obj): Obj => {
   return Object
     .fromEntries(Array.from(Object.entries(obj), (pair) => pair.reverse()));
 };

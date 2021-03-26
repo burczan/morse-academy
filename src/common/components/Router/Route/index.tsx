@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocationChange } from '../../../hooks';
 import { routes } from '../../../../views/routes';
 import { Route as RouteType } from '../model';
-import { goTo } from '../../../utils/helpers';
+import { goTo } from '../../../helpers/navigation';
 
 const pathnames = routes.map((route) => route.pathname);
 
