@@ -12,7 +12,7 @@ type NavbarProps = {
 export const Navbar = ({ items, brandImage = undefined }: NavbarProps) => {
   return (
     <nav
-      className={`navbar is-primary is spaced ${s.marginBottom}`}
+      className={`navbar is-primary ${s.marginBottom}`}
       role="navigation"
       aria-label="main navigation"
     >
