@@ -1,3 +1,5 @@
+import { reverseMapping } from '../common/helpers/utils/reverseMapping';
+
 type CodeMap = { [key: string]: string };
 
 export const FROM_MORSE: CodeMap = {
@@ -38,11 +40,6 @@ export const FROM_MORSE: CodeMap = {
   '---..': '8',
   '----.': '9',
   '...---...': 'SOS',
-};
-
-const reverseMapping = <Obj extends Record<string, unknown>>(obj: Obj): Obj => {
-  return Object
-    .fromEntries(Array.from(Object.entries(obj), (pair) => pair.reverse()));
 };
 
 export const TO_MORSE: CodeMap = reverseMapping(FROM_MORSE);
