@@ -2,7 +2,9 @@ import { reverseMapping } from '../common/helpers/utils/reverseMapping';
 
 type CodeMap = { [key: string]: string };
 
-export const FROM_MORSE: CodeMap = {
+export type CodeArray = [string, string][];
+
+export const FROM_MORSE_LETTERS: CodeMap = Object.freeze({
   '.-': 'A',
   '-...': 'B',
   '-.-.': 'C',
@@ -29,6 +31,11 @@ export const FROM_MORSE: CodeMap = {
   '-..-': 'X',
   '-.--': 'Y',
   '--..': 'Z',
+});
+
+export const FROM_MORSE_LETTERS_ARRAY: CodeArray = Object.entries(FROM_MORSE_LETTERS);
+
+export const FROM_MORSE_NUMBERS: CodeMap = Object.freeze({
   '-----': '0',
   '.----': '1',
   '..---': '2',
@@ -39,9 +46,27 @@ export const FROM_MORSE: CodeMap = {
   '--...': '7',
   '---..': '8',
   '----.': '9',
+});
+
+export const FROM_MORSE_NUMBERS_ARRAY: CodeArray = Object.entries(FROM_MORSE_NUMBERS);
+
+export const FROM_MORSE_SPECIAL_COMMANDS: CodeMap = Object.freeze({
   '...---...': 'SOS',
-};
+});
 
-export const TO_MORSE: CodeMap = reverseMapping(FROM_MORSE);
+// eslint-disable-next-line max-len
+export const FROM_MORSE_SPECIAL_COMMANDS_ARRAY: CodeArray = Object.entries(FROM_MORSE_SPECIAL_COMMANDS);
 
-export const MORSE_CODE = Object.freeze({ ...FROM_MORSE, ...TO_MORSE });
+export const FROM_MORSE: CodeMap = Object.freeze({
+  ...FROM_MORSE_LETTERS,
+  ...FROM_MORSE_NUMBERS,
+  ...FROM_MORSE_SPECIAL_COMMANDS,
+});
+
+export const FROM_MORSE_ARRAY: CodeArray = Object.entries(FROM_MORSE);
+
+export const TO_MORSE: CodeMap = Object.freeze(reverseMapping(FROM_MORSE));
+
+export const MORSE_CODE: CodeMap = Object.freeze({ ...FROM_MORSE, ...TO_MORSE });
+
+export const MORSE_CODE_ARRAY: CodeArray = Object.entries(MORSE_CODE);
