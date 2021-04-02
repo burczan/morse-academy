@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { forwardRef } from 'react';
 import cx from 'classnames';
 import { Label } from '../Label';
 import { Help } from '../Help';
@@ -9,7 +9,6 @@ type TextareaProps = {
   name: string;
   htmlFor?: string;
   placeholder?: string;
-  autofocus?: boolean;
   width?: number;
   required?: boolean;
   label?: string;
@@ -18,30 +17,19 @@ type TextareaProps = {
   helperText?: string;
 };
 
-export const Textarea = ({
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({
   value,
   onChange,
   name,
   htmlFor,
   placeholder = '',
-  autofocus = false,
   width = undefined,
   required = false,
   label = undefined,
   disabled = false,
   horizontal = false,
   helperText = undefined,
-}: TextareaProps) => {
-  const ref = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    if (autofocus) {
-      if (ref && ref.current) {
-        ref.current.focus();
-      }
-    }
-  }, [autofocus]);
-
+}: TextareaProps, ref) => {
   const input = (
     <div
       className={cx('control')}
@@ -80,4 +68,4 @@ export const Textarea = ({
         )}
     </div>
   );
-};
+});
